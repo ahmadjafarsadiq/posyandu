@@ -1,0 +1,375 @@
+body {
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  color: #f954a4;
+}
+
+//navbar
+.navbar-brand {
+  img {
+    max-height: 150px;
+  }
+}
+
+.navbar-light {
+  .navbar-nav {
+    .nav-link {
+      color: #f954a4;
+
+      &.active {
+        font-weight: bold;
+        color: #f954a4 !important;
+      }
+    }
+  }
+}
+
+.btn-login {
+  background-color: #ffffff;
+  color: #f954a4;
+  border-color: #f954a4;
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+.btn-login:hover {
+  background-color: #f954a4;
+  color: white;
+}
+
+//header
+header {
+  padding: 450px 0 165px;
+  margin-top: -180px;
+  background-image: url("../images/header3.jpg");
+  background-size: cover;
+
+  h1 {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
+
+  }
+
+  p {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bolder;
+    color: white;
+  }
+
+  .btn-get-daftar {
+    background-color: whitesmoke;
+    color: #f954a4;
+    border-radius: 7px;
+    font-weight: bold;
+    border-color: #ff69b4;
+    border-style: groove;
+
+    &:hover {
+      background-color: #ff69b4;
+      color: whitesmoke;
+    }
+  }
+}
+
+//HEADER WELCOME
+.section-stats {
+  margin-top: -70px;
+
+  .stats-detail {
+    padding-top: 15px;
+    background-color: #fff;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 10px;
+    border-color: #f954a4;
+    border-style: double;
+  }
+
+  h2 {
+    font-size: 50px;
+    margin-bottom: 0;
+    font-weight: bolder;
+  }
+
+  p {
+    font-size: 25px;
+    font-weight: light;
+  }
+}
+
+//popular
+.section-popular {
+  min-height: 635px;
+  background-color: #F08CB2;
+  margin-top: -80px;
+  margin-bottom: -230px;
+
+  .section-popular-heading {
+    margin-top: 150px;
+  }
+
+  h2,
+  p {
+    color: #fff;
+  }
+
+  h2 {
+    font-family: 'Noto Sans',
+      sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+}
+
+//tulisan Imunisasi anak
+.section-popular-content {
+  .section-popular-posyandu {
+    .things-posyandu {
+      min-height: 380px;
+      background-color: #ddd;
+      color: #fff;
+      padding: 35px;
+      background-size: cover;
+      margin-bottom: 30px;
+    }
+  }
+
+  .posyandu-activity {
+    font-size: 25px;
+    color: #ec6b9d;
+    font-weight: bold;
+
+  }
+
+  .activity-button {
+    .btn-activity-details {
+      background-color: #fff;
+      color: #f954a4;
+      font-weight: 700;
+
+      &:hover {
+        background-color: #f954a4;
+        color: #fff;
+      }
+    }
+  }
+}
+
+//background untuk profile di home
+.section-profile-heading {
+  background: linear-gradient(#fff 0%, whitesmoke 100%);
+  padding-top: 50px;
+  min-height: 506px;
+
+  h2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+  }
+}
+
+//untuk profile di home
+.section-profile-content {
+  margin-top: -350px;
+  padding-bottom: 50px;
+
+  .things-profile {
+    padding: 40px 20px 10px;
+    border-radius: 11 px;
+    margin-bottom: 20px;
+    border-color: #ec6b9d;
+    border-style: solid;
+    background-color: #fff;
+
+    .profile-content {
+      min-height: 380px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .profile {
+      font-weight: 200;
+      font-size: 25px;
+      color: #F08CB2;
+      min-height: 160px;
+    }
+
+    .profile-staff {
+      font-weight: 700;
+      font-size: 22px;
+      color: #ec6b9d;
+    }
+
+    hr {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
+  .btn-more-known {
+    background-color: #f2f2f2;
+    color: #f954a4;
+    font-weight: 700;
+
+    &:hover {
+      background-color: #f954a4;
+      color: #fff;
+
+    }
+  }
+}
+
+.section-footer {
+  p {
+    color: black;
+  }
+
+  .whatsapp {
+    color: green;
+  }
+
+  .color-wasap {
+    color: green;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  svg {
+    color: darkgray;
+  }
+
+  .email-input {
+    color: darkgrey;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+.section-details-header {
+  min-height: 410px;
+  background: #ffe6f2;
+  margin-top: -180px;
+}
+
+.section-details-content {
+  margin-top: -210px;
+  min-height: 100vh;
+
+  .breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .breadcrumb-item {
+    &.active {
+      font-weight: bold;
+      color: #ec6b9d;
+    }
+
+  }
+
+  .card-details {
+    padding: 30px;
+    border-radius: 11px;
+
+    h1 {
+      font-size: 26px;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 18px;
+      color: black;
+    }
+  }
+
+  .features {
+    margin-top: 20px;
+
+    h3 {
+      font-size: 18px;
+      color: #f954a4;
+      margin-bottom: 0px;
+    }
+
+    p {
+      margin-bottom: 0px;
+    }
+
+    .description {
+      margin-left: 10px;
+      overflow: hidden;
+      float: center;
+
+    }
+
+    .fa-solid {
+      width: 45px;
+      height: 45px;
+      float: left;
+    }
+  }
+
+  .gallery {
+    .xzoom-container {
+      display: block;
+
+      .xzoom {
+        width: 100%;
+        box-shadow: none;
+        margin-bottom: 10px;
+      }
+
+      .xactive {
+        border: 10px solid black;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .Imunisasi-text {
+    text-decoration: none;
+    color: #F08CB2;
+
+    &:hover {
+      color: #ddd;
+    }
+  }
+
+  .text-isi {
+    text-align: justify;
+
+    b {
+      color: #cd4c77;
+    }
+
+  }
+
+  .join-container {
+    margin-top: -11px;
+    border-radius: 15px solid #ddd;
+  }
+
+  .btn-join-now {
+    background-color: #ff69b4;
+    color: #fff;
+
+    &:hover {
+      background-color: #fabbd0;
+      color: #fff;
+    }
+  }
+}
