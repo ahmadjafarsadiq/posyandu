@@ -52,7 +52,7 @@
                                         <img src="{{ route(('login')) }}" width="40" height="40" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="">My Profile</a>
+                                        <a class="dropdown-item" href="{{ route('pages.profile')">My Profile</a>
                                         <a class="dropdown-item" href="#">Log Out</a>
 
                                     </div>
