@@ -7,6 +7,7 @@ use App\Http\Controllers\ImunController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeLoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ProfileController;
 
@@ -48,11 +49,18 @@ Route::prefix('/')
         Route::get('/admin', [DashboardController::class, 'index'])->name('admin.dashboard');
     });
 
-
-Route::controller(ProfileController::class)->prefix('profile')->name('profile.')->group(function () {
-    Route::get('profile', 'index')->name('profile.index');
-    Route::patch('update/{id}', 'update')->name('profile.update');
+Route::group(['middleware' => ['auth']], function () {
+    /**
+     * Logout Route
+     */
+    Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
+
+Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::patch('update/{id}', [ProfileController::class, 'update'])->name('profile.update');
+
+
+
 
 Auth::routes(['verify' => true]);
 Auth::routes();

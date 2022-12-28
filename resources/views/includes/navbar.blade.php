@@ -1,4 +1,4 @@
-<!--navbar-->
+<!-- navbar
 
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
@@ -33,19 +33,19 @@
                 </li>
 
                 <!--Mobile button-->
-                <form class="form-inline d-sm-block d-md-none" action="{{ route('login') }}">
+                <!-- <form class="form-inline d-sm-block d-md-none" action="{{ route('login') }}">
                     
                     <button class="btn btn-login my-2 my-2 my-sm-0 px-4">
                         Login
                     </button>
                 </form>
                 <!--Dekstop button-->
-                <form class="form-inline my-2 my-lg-0 d-none d-md-block" action="{{ route('login') }}">
+                <!-- <form class="form-inline my-2 my-lg-0 d-none d-md-block" action="{{ route('login') }}">
                     <button class="btn btn-login btn-navbar-right my-2 my-2 my-sm-0 px-4">
                         Login
                     </button> 
-                </form>
-            </ul>
+                </form> --> 
+            <!-- </ul>
         </div>
     </nav>
-</div>
+</div> --> 

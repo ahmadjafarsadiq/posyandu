@@ -41,6 +41,7 @@
                 <!--Dekstop button-->
                 <form class="form-inline my-2 my-lg-0 d-none d-md-block">
                     @csrf
+
                     <nav class="navbar navbar-expand-sm">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -49,11 +50,12 @@
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="{{ route(('login')) }}" width="40" height="40" class="rounded-circle">
+                                        <img src="{{ route('login') }}" width="40" height="40" class="rounded-circle">
                                     </a>
+
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="{{ route('pages.profile')">My Profile</a>
-                                        <a class="dropdown-item" href="#">Log Out</a>
+                                        <a class="dropdown-item" href="{{ route('profile.index') }}">My Profile</a>
+                                        <a class="dropdown-item" href="{{ route('logout')}}">Log Out</a>
 
                                     </div>
                                 </li>
