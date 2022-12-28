@@ -48,6 +48,8 @@ Route::prefix('/')
         Route::get('/admin', [DashboardController::class, 'index'])->name('admin.dashboard');
     });
 
+    //contoh
+
 
 Route::controller(ProfileController::class)->prefix('profile')->name('profile.')->group(function () {
     Route::get('profile', 'index')->name('profile.index');
