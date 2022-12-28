@@ -34,18 +34,35 @@
                 <!--Mobile button-->
                 <form class="form-inline d-sm-block d-md-none">
                     <a href="{{ route('login') }}">
-                    <button class="btn btn-login my-2 my-2 my-sm-0 px-4">
-                        Login
-                    </button> </a>
+                        <button class="btn btn-login my-2 my-2 my-sm-0 px-4">
+                            Login
+                        </button> </a>
                 </form>
                 <!--Dekstop button-->
-                <a href="{{ route('login') }}">
                 <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                    <button class="btn btn-login btn-navbar-right my-2 my-2 my-sm-0 px-4">
-                        Login
-                    </button></a>
-                </form>
-            </ul>
+                    @csrf
+                    <nav class="navbar navbar-expand-sm">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbar-list-4">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="{{ route(('login')) }}" width="40" height="40" class="rounded-circle">
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="">My Profile</a>
+                                        <a class="dropdown-item" href="#">Log Out</a>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
         </div>
-    </nav>
+        </form>
+        </ul>
+</div>
+</nav>
 </div>

@@ -13,7 +13,7 @@
 
 <body>
 
-    @include('includes.navbar')
+    @include('includes.navbarlogin')
 
     @yield('content')
 
