@@ -2,7 +2,7 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
         <a href="#" class="navbar-brand">
-            <img src="frontend/images/logo.png" alt="Logo posyandu">
+            <img src="{{ url('logo.png') }}" alt="Logo posyandu">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
             <span class="navbar-toggler-icon"></span>
@@ -46,12 +46,15 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
                         <div class="collapse navbar-collapse" id="navbar-list-4">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
+
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="{{ route('login') }}" width="40" height="40" class="rounded-circle">
+                                        <img href="{!! asset('storage/photo'.Auth::user()->avatar) !!}" width="40" height="40" class="rounded-circle">
                                     </a>
+
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" href="{{ route('profile.index') }}">My Profile</a>

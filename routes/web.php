@@ -62,6 +62,7 @@ Route::patch('update/{id}', [ProfileController::class, 'update'])->name('profile
 
 
 
+
 Auth::routes(['verify' => true]);
 Auth::routes();
 

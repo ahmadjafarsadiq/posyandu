@@ -3,7 +3,7 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
         <a href="#" class="navbar-brand">
-            <img src="frontend/images/logo.png" alt="Logo posyandu">
+            <img src="{{ asset('image/logo.png') }}" alt="Logo posyandu">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
             <span class="navbar-toggler-icon"></span>
