@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,4 +24,4 @@
     @stack('addon-script')
 </body>
 
-</html>
+</html> -->

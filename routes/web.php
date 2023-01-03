@@ -8,8 +8,12 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeLoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\resendcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +28,7 @@ use App\Http\Controllers\ProfileController;
 
 // tidak harus login terlebih dahulu
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/detail', [DetailController::class, 'index'])
 //     ->name('detail');
 // Route::get('/imun', [ImunController::class, 'index'])
@@ -38,17 +42,17 @@ Route::get('/', [HomeController::class, 'index']);
 //         Route::get('/imun', [ImunController::class, 'index']);
 //         Route::get('/home', [HomeLoginController::class, 'index']);
 //     });
-
 Route::get('/detail', [DetailController::class, 'index'])->middleware(['auth', 'verifed'])->name('user.detail');
-Route::get('/imun', [ImunController::class, 'index'])->middleware(['auth', 'verified'])->name('user.imunisasi');
-Route::get('/home', [HomeLoginController::class, 'index'])->name('user.home');
+Route::get('/detailimun', [ImunController::class, 'index'])->middleware(['auth', 'verified'])->name('user.imunisasi');
+Route::get('/home', [HomeLoginController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 
 Route::prefix('/')
     ->middleware(['auth:sanctum', 'admin'])
     ->group(function () {
-        Route::get('/admin', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     });
 
+Route::get('/resend', [resendcontroller::class, 'show'])->name('resend');
 Route::group(['middleware' => ['auth']], function () {
     /**
      * Logout Route
@@ -56,15 +60,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
 
-Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
-Route::patch('update/{id}', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/formpos', [FormController::class, 'formposyandu'])->middleware(['auth', 'verified'])->name('form');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::put('/profile/{users}', [ProfileController::class, 'update'])->name('update');
 
 
 
 
 
 Auth::routes(['verify' => true]);
-Auth::routes();
+
 
 // Route::get('/email/verify/{id}/{hash}', [VerifyEmailController:: {
 

@@ -18,23 +18,21 @@
 
                     <div class="row">
                         <div class="col-md-4">
-                            @if($user->photo)
-                            <img src="{{ asset('storage/photos/'.$user->photo) }}" class="img-thumbnail rounded mx-auto d-block">
-                            @else
-                            <img src="{{ asset('frontend/image/bayi.jpg') }}" class="img-thumbnail rounded mx-auto d-block">
-                            @endif
+
+                            <img src="/storage/{{ $users->photo }}" class="img-thumbnail rounded mx-auto d-block">
+
 
                         </div>
                         <div class="col-md-8">
-                            <form method="POST" action="{{ route('profile.update', $user->id) }}" enctype="multipart/form-data">
-                                @method('PATCH')
+                            <form method="POST" action="{{ route('update', auth()->id()) }}" enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
 
                                 <div class="row mb-3">
                                     <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name">
+                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $users->name }}" required autocomplete="name">
 
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -48,7 +46,7 @@
                                     <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" required autocomplete="email">
+                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $users->email) }}" required autocomplete="email">
 
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -90,7 +88,7 @@
                                     <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" value="{{ $users->password }}">
                                     </div>
                                 </div>
 
@@ -104,7 +102,7 @@
 
                                 <div class="row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary" action="{{ route('profile.update', $user->id)}}">
+                                        <button type="submit" class="btn btn-primary" action="{{ route('update', $users ->id)}}">
                                             {{ __('Update Profile') }}
                                         </button>
                                     </div>

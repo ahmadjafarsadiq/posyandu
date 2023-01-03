@@ -5,7 +5,7 @@
 
 @section('content')
 <!--header-->
-
+<!-- 
 <header class="text-center">
 
     <h1 class="mt-5">POSYANDU SAHABAT MASYARAKAT</h1>
@@ -156,6 +156,6 @@ justify-content-center">
             </div>
         </div>
     </div>
-</main>
+</main> -->
 
 @endsection

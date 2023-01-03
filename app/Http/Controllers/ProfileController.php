@@ -13,23 +13,33 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $user = User::findorFail(Auth::id());
-        return view('pages.profile', compact('user'));
+        $users = User::findorFail(Auth::id());
+        return view('pages.profile', compact('users'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, User $users)
     {
         request()->validate([
             'name'       => 'required|string|min:2|max:100',
-            'email'      => 'required|email|unique:users,email, ' . $id . ',id',
+            'email'      => 'required|email|unique:users,email, ' . $users . ',id',
             'old_password' => 'nullable|string',
             'password' => 'nullable|required_with:old_password|string|confirmed|min:8',
-            // 'photo' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+
         ]);
 
-        $user = User::findorFail(Auth::id());
-        return view('pages.profile', compact('user'));
+        $input = $request->all();
+        if ($photo = $request->file('storage')) {
+            $destinationPath = 'storage/';
+            $profileImage = date('YmdHis') . "." . $photo->getClientOriginalExtension();
+            $photo->move($destinationPath, $profileImage);
+            $input['photo'] = "$profileImage";
+        } else {
+            unset($input['photo']);
+        }
 
+        $users->update($input);
+
+        return redirect()->route('index')->with('success', 'dah update');
 
 
         //     $user = User::find($id);

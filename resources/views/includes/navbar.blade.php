@@ -1,5 +1,5 @@
-<!-- navbar
-
+navbar
+<!-- 
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
         <a href="#" class="navbar-brand">
@@ -30,22 +30,22 @@
                 </li>
                 <li class="nav-item mx-md-2">
                     <a href="#" class="nav-link">PAUD</a>
-                </li>
+                </li> -->
 
-                <!--Mobile button-->
-                <!-- <form class="form-inline d-sm-block d-md-none" action="{{ route('login') }}">
-                    
+<!-- Mobile button -->
+<!-- <form class="form-inline d-sm-block d-md-none" action="{{ route('login') }}">
+
                     <button class="btn btn-login my-2 my-2 my-sm-0 px-4">
                         Login
                     </button>
-                </form>
-                <!--Dekstop button-->
-                <!-- <form class="form-inline my-2 my-lg-0 d-none d-md-block" action="{{ route('login') }}">
+                </form> -->
+<!-- Dekstop button -->
+<!-- <form class="form-inline my-2 my-lg-0 d-none d-md-block" action="{{ route('login') }}">
                     <button class="btn btn-login btn-navbar-right my-2 my-2 my-sm-0 px-4">
                         Login
-                    </button> 
-                </form> --> 
-            <!-- </ul>
+                    </button>
+                </form>
+            </ul>
         </div>
     </nav>
-</div> --> 
+</div> -->
