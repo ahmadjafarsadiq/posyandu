@@ -28,7 +28,6 @@ use App\Http\Controllers\resendcontroller;
 
 // tidak harus login terlebih dahulu
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/detail', [DetailController::class, 'index'])
 //     ->name('detail');
 // Route::get('/imun', [ImunController::class, 'index'])
@@ -43,13 +42,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //         Route::get('/home', [HomeLoginController::class, 'index']);
 //     });
 Route::get('/detail', [DetailController::class, 'index'])->middleware(['auth', 'verifed'])->name('user.detail');
-Route::get('/detailimun', [ImunController::class, 'index'])->middleware(['auth', 'verified'])->name('user.imunisasi');
+Route::get('/detailimun', [ImunController::class, 'index'])->middleware(['auth', 'verified'])->name('imunisasi');
 Route::get('/home', [HomeLoginController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 
 Route::prefix('/')
     ->middleware(['auth:sanctum', 'admin'])
     ->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     });
 
 Route::get('/resend', [resendcontroller::class, 'show'])->name('resend');

@@ -31,38 +31,25 @@
                     <a href="#" class="nav-link">PAUD</a>
                 </li>
 
-                @guest
                 <!--Mobile button-->
-                <form class="form-inline d-sm-block d-md-none">
-                    <button class="btn btn-login my-2 my-2 my-sm-0 px-4" type="button" onclick="event.preventDefault();" location.href="{{ url('login')}}">
-                        Login
-                    </button>
-                </form>
-                <!--Dekstop button-->
-                <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                    @csrf
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{asset('frontend/images/bayi.jpg')}}" width="40" height="40" class="rounded-circle">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-
-                    <button class="btn btn-login my-2 my-2 my-sm-0 px-4" type="button" onclick="event.preventDefault();" location.href="{{ url('login')}}">
-                        Login
-                        <div class="collapse navbar-collapse" id="navbar-list-4">
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img href="{!! asset('storage/photo'.Auth::user()->avatar) !!}" width="40" height="40" class="rounded-circle">
-                                    </a>
-
-
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
-                                        <a class="dropdown-item" href="{{ route('logout')}}">Log Out</a>
-
-                                    </div>
-                                </li>
-                            </ul>
+                            <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard (only admin)</a>
+                            <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
                         </div>
-                    </button>
+                    </a>
+                    <!--Dekstop button-->
+                    <form class="form-inline my-2 my-lg-0 d-none d-md-blockd-sm-block d-md-none">
+                        @csrf
+                        <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
+                            Login
+                        </button>
+                    </form>
+
 
                     <!-- <div class="collapse navbar-collapse" id="navbar-list-4">
                         <ul class="navbar-nav">
@@ -84,7 +71,7 @@
     </nav>
 </div>
 </form>
-@endguest
+
 </ul>
 </div>
 </nav>
