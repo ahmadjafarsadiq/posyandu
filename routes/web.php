@@ -41,7 +41,7 @@ use App\Http\Controllers\resendcontroller;
 //         Route::get('/imun', [ImunController::class, 'index']);
 //         Route::get('/home', [HomeLoginController::class, 'index']);
 //     });
-Route::get('/detail', [DetailController::class, 'index'])->middleware(['auth', 'verifed'])->name('user.detail');
+Route::get('/detail', [DetailController::class, 'index'])->middleware(['auth', 'verified'])->name('detail');
 Route::get('/detailimun', [ImunController::class, 'index'])->middleware(['auth', 'verified'])->name('imunisasi');
 Route::get('/home', [HomeLoginController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 

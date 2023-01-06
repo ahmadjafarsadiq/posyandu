@@ -9,7 +9,7 @@
 
     <h1 class="mt-5">POSYANDU SAHABAT MASYARAKAT</h1>
     <p class="mt-2">MELAYANI MASYARAKAT DENGAN SEPENUH HATI</p>
-    <a href="#" class="btn btn-get-daftar px-4 mt-4">
+    <a href="{{ route('form')}}" class="btn btn-get-daftar px-4 mt-4">
         PENDAFTARAN POSYANDU
     </a>
 </header>

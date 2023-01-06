@@ -2,7 +2,7 @@
 <div class="container">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white">
         <a href="#" class="navbar-brand">
-            <img src="{{ url('logo.png') }}" alt="Logo posyandu">
+            <img src="{{asset('frontend/images/logo.png')}}" alt="Logo posyandu">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
             <span class="navbar-toggler-icon"></span>
@@ -34,11 +34,10 @@
                 <!--Mobile button-->
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('frontend/images/bayi.jpg')}}" width="40" height="40" class="rounded-circle">
+                        <img src="{{asset('frontend/images/bayi.jpg')}}" width="70" height="70" class="rounded-circle">
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
                             <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
-                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard (only admin)</a>
                             <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
                         </div>
                     </a>

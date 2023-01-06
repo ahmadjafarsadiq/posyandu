@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.applogin')
 
 @section('title','Detail Posyandu')
 
@@ -88,7 +88,7 @@
                         <hr>
                         <table class="artikel-informasi">
                             <tr>
-                                <th width="70%"><a href="https://youtu.be/1hZa60t8wSE" class="Imunisasi-text">Cari tahu lebih lanjut terkait imunisasi</a></th>
+                                <th width="70%"><a href="{{ route('imunisasi')}}" class="Imunisasi-text">Cari tahu lebih lanjut terkait imunisasi</a></th>
                             </tr>
                         </table>
                     </div>

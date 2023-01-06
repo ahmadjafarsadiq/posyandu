@@ -147,7 +147,7 @@
                         <hr>
                         <table class="artikel-informasi">
                             <tr>
-                                <th width="70%"><a href="#" class="Imunisasi-text">Cari tahu lebih lanjut terkait imunisasi</a></th>
+                                <th width="70%"><a href="{{ route('detail')}}" class="Imunisasi-text">Cari tahu lebih lanjut terkait posyandu kaswari</a></th>
                             </tr>
                         </table>
                     </div>

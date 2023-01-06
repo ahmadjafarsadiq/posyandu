@@ -34,6 +34,10 @@
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                 </a>
+                <a class="dropdown-item" href="{{ route('home')}}">
+                    <i class="fa fa-home mr-2 text-gray-400"></i>
+                    Back to Home
+                </a>
             </div>
         </li>
 
