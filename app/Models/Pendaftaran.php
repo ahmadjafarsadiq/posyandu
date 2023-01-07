@@ -15,6 +15,10 @@ class Pendaftaran extends Model
 
     protected $hidden = [];
 
+    protected $casts = [
+        'jenis_kelamin' => 'array',
+    ];
+
     // public funtion daftar(){
     //     return $this->belongs
     // }

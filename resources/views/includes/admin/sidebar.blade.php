@@ -2,7 +2,7 @@
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
      <!-- Sidebar - Brand -->
-     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard')}}">
          <div class="sidebar-brand-text mx-3">Posyandu Kaswari</div>
      </a>
 
@@ -11,15 +11,15 @@
 
      <!-- Nav Item - Dashboard -->
      <li class="nav-item active">
-         <a class="nav-link" href="index.html">
+         <a class="nav-link" href="{{ route('dashboard')}}">
              <img src="backend/img/carbon_dashboard.svg" style="width:20px; height:40px;" alt="g">
              <span>Dashboard</span></a>
      </li>
 
      <li class="nav-item active">
-         <a class="nav-link" href="index.html">
+         <a class="nav-link" href="{{ route('Pendaftaran.index')}}">
              <img src="backend/img/image2.svg" style="width:20px; height:40px;" alt="g">
-             <span>Gallery Posyandu</span></a>
+             <span>Data Balita</span></a>
      </li>
 
      <li class="nav-item active">

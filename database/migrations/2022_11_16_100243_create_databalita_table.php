@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->integer('tinggi_badan');
             $table->integer('berat_badan');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

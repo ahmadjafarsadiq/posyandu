@@ -15,7 +15,7 @@
 
 
                         <div class="col-md-8">
-                            <form method="POST" action="{{ route('login')}}">
+                            <form method="POST" action="{{ route('formpos') }}">
                                 @csrf
 
                                 <!-- Nama Anak -->

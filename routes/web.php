@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\resendcontroller;
+use App\Http\Controllers\Admin\PendaftaranPosyanduBalitaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,11 +46,13 @@ use App\Http\Controllers\resendcontroller;
 Route::get('/detail', [DetailController::class, 'index'])->middleware(['auth', 'verified'])->name('detail');
 Route::get('/detailimun', [ImunController::class, 'index'])->middleware(['auth', 'verified'])->name('imunisasi');
 Route::get('/home', [HomeLoginController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
+Route::get('/about', [AboutController::class, 'index'])->middleware(['auth', 'verified'])->name('about');
 
 Route::prefix('/')
     ->middleware(['auth:sanctum', 'admin'])
     ->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('Pendaftaran', PendaftaranPosyanduBalitaController::class);
     });
 
 Route::get('/resend', [resendcontroller::class, 'show'])->name('resend');

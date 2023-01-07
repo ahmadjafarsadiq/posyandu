@@ -44,7 +44,7 @@
 
 
             <div class="flex items-center mt-4">
-                <x-primary-button class="ml-3" href="">
+                <x-primary-button class="ml-3" href="{{ route('home') }}">
                     {{ __('Log in') }}
                 </x-primary-button>
                 <a class="text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">&nbsp Don't have any acc? Register here </a>

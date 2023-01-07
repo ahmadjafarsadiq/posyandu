@@ -13,7 +13,7 @@
                     <a href="{{ route('home') }}" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a href="#" class="nav-link">About</a>
+                    <a href="{{ route('about') }}" class="nav-link">About</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Form
