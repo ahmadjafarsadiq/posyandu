@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('databalita', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('nama_anak');
             $table->string('nama_ayah');
             $table->string('nama_ibu');

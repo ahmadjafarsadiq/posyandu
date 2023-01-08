@@ -17,7 +17,7 @@
      </li>
 
      <li class="nav-item active">
-         <a class="nav-link" href="{{ route('Pendaftaran.index')}}">
+         <a class="nav-link" href="{{ route('databalita.index')}}">
              <img src="backend/img/image2.svg" style="width:20px; height:40px;" alt="g">
              <span>Data Balita</span></a>
      </li>

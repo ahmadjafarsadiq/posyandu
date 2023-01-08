@@ -52,8 +52,9 @@ Route::prefix('/')
     ->middleware(['auth:sanctum', 'admin'])
     ->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('Pendaftaran', PendaftaranPosyanduBalitaController::class);
     });
+
+Route::resource('databalita', PendaftaranPosyanduBalitaController::class);
 
 Route::get('/resend', [resendcontroller::class, 'show'])->name('resend');
 Route::group(['middleware' => ['auth']], function () {
