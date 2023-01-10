@@ -17,29 +17,24 @@ class ProfileController extends Controller
         return view('pages.profile', compact('users'));
     }
 
-    public function update(Request $request, User $users)
+    public function update(Request $request, $id)
     {
         request()->validate([
             'name'       => 'required|string|min:2|max:100',
-            'email'      => 'required|email|unique:users,email, ' . $users . ',id',
+            'email'      => 'email|unique:users,email,id',
             'old_password' => 'nullable|string',
             'password' => 'nullable|required_with:old_password|string|confirmed|min:8',
-
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $input = $request->all();
-        if ($photo = $request->file('storage')) {
-            $destinationPath = 'storage/';
-            $profileImage = date('YmdHis') . "." . $photo->getClientOriginalExtension();
-            $photo->move($destinationPath, $profileImage);
-            $input['photo'] = "$profileImage";
-        } else {
-            unset($input['photo']);
-        }
+        $photo = $request->photo->extension();
+        $request->photo->move(public_path('users', $photo));
 
-        $users->update($input);
-
-        return redirect()->route('index')->with('success', 'dah update');
+        $user = User::where('id', $id)->first();
+        $user->name = $request->name;
+        $user->photo = $photo;
+        $user->save();
+        return redirect('profile');
 
 
         //     $user = User::find($id);

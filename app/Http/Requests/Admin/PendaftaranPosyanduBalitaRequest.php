@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class PendaftaranPosyanduBalitaRequest extends FormRequest
@@ -28,7 +29,10 @@ class PendaftaranPosyanduBalitaRequest extends FormRequest
             'nama_anak' => 'required|max:255',
             'nama_ayah' => 'required|max:255',
             'nama_ibu' => 'required|max:255',
-            'jenis_kelamin' => 'required|enum',
+            'jenis_kelamin' => [
+                'required',
+                Rule::in(['L', 'P']),
+            ],
             'tanggal_lahir' => 'required|date',
             'tinggi_badan' => 'required|integer',
             'berat_badan' => 'required|integer'

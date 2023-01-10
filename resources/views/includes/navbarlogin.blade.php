@@ -34,7 +34,7 @@
                 <!--Mobile button-->
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('frontend/images/bayi.jpg')}}" width="70" height="70" class="rounded-circle">
+                        <img src="{{ Auth::user()->gravatar()}}" alt="{{Auth::user()->name}}" width="70" height="70" class="rounded-circle">
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
                             <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>

@@ -15,7 +15,7 @@ class PendaftaranPosyanduBalitaController extends Controller
      */
     public function index()
     {
-        $items = Pendaftaran::all();
+        $items = Pendaftaran::all(); //Pendaftaran adalah model, $items adalah inisialisasi dari model
 
         return view('pages.admin.DataBalita.index', [
             'items' => $items

@@ -12,7 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;   
+    use HasApiTokens, HasFactory, Notifiable;
     /**
      * The attributes that are mass assignable.
      *
@@ -46,4 +46,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function gravatar($size = 100)
+    {
+        $default = 'mm';
+        return "https://www.gravatar.com/avatar/" . md5(strtolower(trim($this->email))) . "?d=" . urlencode($default) . "&s=" . $size;
+    }
 }

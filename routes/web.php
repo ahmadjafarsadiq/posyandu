@@ -45,7 +45,7 @@ use App\Http\Controllers\Admin\PendaftaranPosyanduBalitaController;
 //     });
 Route::get('/detail', [DetailController::class, 'index'])->middleware(['auth', 'verified'])->name('detail');
 Route::get('/detailimun', [ImunController::class, 'index'])->middleware(['auth', 'verified'])->name('imunisasi');
-Route::get('/home', [HomeLoginController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
+Route::get('/', [HomeLoginController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->middleware(['auth', 'verified'])->name('about');
 
 Route::prefix('/')
@@ -66,7 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::get('/formpos', [FormController::class, 'formposyandu'])->middleware(['auth', 'verified'])->name('form');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::put('/profile/{users}', [ProfileController::class, 'update'])->name('update');
+Route::post('/profile/{users}', [ProfileController::class, 'update'])->name('update');
 
 
 
